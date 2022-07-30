@@ -1,26 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import PageRender from "components/Container/PageRender";
+import React from "react";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <h2 className="text-green-500">hello</h2>
+      <Routes>
+        <Route path="/" element={<PageRender />} />
+        <Route path="/:page" element={<PageRender />} />
+        <Route path="/:page/:slug" element={<PageRender />} />
+      </Routes>
+    </React.Fragment>
   );
 }
 
-export default App;
+export default React.memo(App);
