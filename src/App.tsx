@@ -1,11 +1,12 @@
-import PageRender from "components/Container/PageRender";
-import React from "react";
-import { Route, Routes } from "react-router-dom";
+import PageRender from 'components/Container/PageRender';
+import Header from 'components/global/Header';
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
     <React.Fragment>
-      <h2 className="text-green-500">hello</h2>
+      <Header />
       <Routes>
         <Route path="/" element={<PageRender />} />
         <Route path="/:page" element={<PageRender />} />
@@ -15,4 +16,4 @@ function App() {
   );
 }
 
-export default React.memo(App);
+export default App;
