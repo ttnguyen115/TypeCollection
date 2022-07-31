@@ -1,6 +1,10 @@
 import { QueryClient } from '@tanstack/react-query';
 import { toast } from 'react-toastify';
 
+export const queryKeys = {
+  user: 'user',
+}
+
 function queryErrorHandler(error: unknown): void {
   // error is type unknown because in js, anything can be an error(e.g. throw(5))
   const title =

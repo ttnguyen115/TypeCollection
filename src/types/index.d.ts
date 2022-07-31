@@ -12,5 +12,11 @@ export interface IRegister {
   cf_password: string;
 }
 
+export interface ILogin {
+  email: string;
+  password: string;
+  remember: boolean;
+}
+
 export type InputChange = ChangeEvent<HTMLInputElement>;
 export type FormSubmit = FormEvent<HTMLFormElement>;

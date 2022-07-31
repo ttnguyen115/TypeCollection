@@ -1,1 +1,1 @@
-export function useUser() {}
+export function useUser() { };

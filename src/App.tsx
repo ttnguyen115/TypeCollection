@@ -3,11 +3,9 @@ import Header from 'components/global/Header';
 import { onAuthStateChanged, sendEmailVerification, signOut } from 'firebase/auth';
 import { auth } from 'lib/firebase';
 import React from 'react';
-import { Route, Routes, useNavigate } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
 function App() {
-  const navigate = useNavigate();
-
   React.useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
       if (user) {
@@ -16,8 +14,6 @@ function App() {
           await sendEmailVerification(user);
           return;
         }
-
-        console.log(user);
       }
     });
 
