@@ -1,10 +1,13 @@
-import { useAuthSignInWithEmailAndPassword } from '@react-query-firebase/auth';
+import { useAuthSignInWithEmailAndPassword, useAuthUser } from '@react-query-firebase/auth';
+import Loading from 'components/global/Loading';
 import { auth } from 'lib/firebase';
+import { queryKeys } from 'lib/react-query';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FormSubmit, InputChange } from 'types';
 
 function LoginForm() {
+  const query = useAuthUser(queryKeys.user, auth);
   const initialState = { email: "", password: "" };
   const [userLogin, setUserLogin] = React.useState(initialState);
   const { email, password } = userLogin;

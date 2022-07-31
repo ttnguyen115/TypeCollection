@@ -1,4 +1,4 @@
-import { QueryClient } from '@tanstack/react-query';
+import { QueryClient } from 'react-query';
 import { toast } from 'react-toastify';
 
 export const queryKeys = {
